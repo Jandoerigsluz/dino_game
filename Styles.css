@@ -24,7 +24,7 @@
   position: relative;
   top: 175px;
   left: 550px;
-  background-image: url("file:///Users/jandorig/Downloads/Game/images/cactus_2.png");
+  background-image: url("img/maschiene.png");
   background-size: cover;
   animation: maschiene 1.33s infinite;
 }

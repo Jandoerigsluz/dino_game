@@ -25,7 +25,7 @@ setInterval(() => {
   if (maschieneLeft < 0) {
     maschiene.style.display = 'none';
   } else {
-    rmaschiene.style.display = ''
+    maschiene.style.display = ''
   }
 
   if (maschieneLeft < 50 && maschieneLeft > 0 && janTop > 150) {
