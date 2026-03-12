@@ -15,6 +15,9 @@ document.addEventListener('keypress', (event) => {
   }
 })
 
+
+
+
 setInterval(() => {
 
   const janTop = parseInt(window.getComputedStyle(jan).getPropertyValue("top"));
@@ -36,6 +39,9 @@ setInterval(() => {
     // Animation starten
     jan.classList.add("crash");
 
+    maschiene.style.left = maschieneLeft + "px";
+    maschiene.style.animation = "none";
+
     // Maschine stoppen
     maschiene.style.animation = "none";
 
@@ -47,3 +53,5 @@ setInterval(() => {
   }
 
 }, 50);
+
+

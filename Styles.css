@@ -17,15 +17,6 @@
   background-image: url("img/Jan_Run-2.png");
   background-size: cover;
 }
-
-#game-over {
-  height: 75px;
-  width: 75px;
-  top: 225px;
-  position: relative;
-  background-image: url("img/Jan_Game-Over.png");
-  background-size: cover;
-}
  
 
 #maschiene {
@@ -45,13 +36,14 @@
 }
 
 .jump-animation {
-  animation: jump 1.5s;
+  animation: jump 1s;
 }
 
-.crash {
+#jan.crash {
   background-image: url("img/Jan_Game-Over.png");
-  transform: rotate(90deg);
-  transition: transform 0.3s;
+  filter: sepia(1) saturate(5) hue-rotate(300deg);
+  transition: filter 0.3s;
+  animation: shake 0.1s infinite;
 }
 @keyframes jump {
   0%{top: 225px;}
@@ -60,3 +52,10 @@
   100%{top: 225px;}
 }
 
+@keyframes shake {
+  0%  { left: 0px; }
+  25% { left: -5px; }
+  50% { left: 5px; }
+  75% { left: -5px; }
+  100%{ left: 0px; }
+}
