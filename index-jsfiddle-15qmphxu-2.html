@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dino Game</title>
+
+  <style>
+    
+
+#game {
+  width: 600px;
+  height: 300px;
+  border: 2px solid black;
+  margin: auto;
+  background-image: url("https://punkt4.info/fileadmin/_processed_/c/d/csm_Komax_5_1__615b5952f9.jpeg");
+  background-size: cover;
+}
+
+#jan {
+  height: 75px;
+  width: 75px;
+  top: 225px;
+  position: relative;
+  background-image: url("ffile:///Users/jandorig/Downloads/Game/images/Jan/Jan_Game-Over.png");
+  background-size: cover;
+}
+
+#maschiene {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  top: 175px;
+  left: 550px;
+  background-image: url("file:///Users/jandorig/Downloads/Game/images/cactus_2.png");
+  background-size: cover;
+  animation: rock 1.33s infinite;
+}
+
+@keyframes rock {
+  0%{left: 550px;}
+  100%{left: -50px;}
+}
+
+.jump-animation {
+  animation: jump 0.5s;
+}
+
+@keyframes jump {
+  0%{top: 225px;}
+  50%{top: 75px;}
+  75%{top: 75px;}
+  100%{top: 225px;}
+}
+  </style>
+
+  
+</head>
+<body>
+  <link rel="stylesheet" href="style.css">
+
+  <div id="game">
+    <div id="jan"></div>
+    <div id="rock"></div>
+  </div>
+  <h1 id="score">0</h1>
+  <script src="script.js"></script>
+
+  <script>
+    const jan = document.getElementById("jan");
+const maschiene = document.getElementById("maschiene");
+const score = document.getElementById("score");
+
+function jump() {
+  dino.classList.add("jump-animation");
+  setTimeout(() => jan.classList.remove("jump-animation"), 500);
+}
+
+document.addEventListener("keypress", (event) => {
+  if (!jan.classList.contains("jump-animation")) {
+    jump();
+  }
+});
+
+setInterval(() => {
+  const janTop = parseInt(window.getComputedStyle(jan).getPropertyValue("top"));
+  constmaschiene  = parseInt(
+    window.getComputedStyle(maschiene).getPropertyValue('left'));
+  score.innerText = 0;
+
+  if (maschieneLeft < 0) {
+    maschiene.style.display = "none";
+  } else {
+    maschiene.style.display = "";
+  }
+
+  if (maschieneLeft < 50 && maschieneLeft > 0 && dinoTop > 150) {
+    alert("You got a score of: " + score.innerText + "\n\nPlay again?");
+    location.reload();
+  }
+}, 50);
+
+  </script>
+</body>
+</html>
