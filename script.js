@@ -1,35 +1,37 @@
-const dino = document.getElementById("dino");
-const rock = document.getElementById("rock");
+const jan = document.getElementById("jan");
+const maschiene = document.getElementById("maschiene");
 const score = document.getElementById("score");
+score.innerText = 0;
 
 function jump() {
-  dino.classList.add("jump-animation");
+  jan.classList.add("jump-animation");
   setTimeout(() =>
-    dino.classList.remove("jump-animation"), 500);
+    jan.classList.remove("jump-animation"), 500);
 }
 
 document.addEventListener('keypress', (event) => {
-  if (!dino.classList.contains('jump-animation')) {
+  if (!jan.classList.contains('jump-animation')) {
     jump();
   }
 })
 
 setInterval(() => {
-  const dinoTop = parseInt(window.getComputedStyle(dino)
+  const janTop = parseInt(window.getComputedStyle(jan)
     .getPropertyValue('top'));
-  const rockLeft = parseInt(window.getComputedStyle(rock)
+  const maschieneLeft = parseInt(window.getComputedStyle(maschiene)
     .getPropertyValue('left'));
   score.innerText++;
 
-  if (rockLeft < 0) {
-    rock.style.display = 'none';
+  if (maschieneLeft < 0) {
+    maschiene.style.display = 'none';
   } else {
-    rock.style.display = ''
+    rmaschiene.style.display = ''
   }
 
-  if (rockLeft < 50 && rockLeft > 0 && dinoTop > 150) {
+  if (maschieneLeft < 50 && maschieneLeft > 0 && janTop > 150) {
     alert("You got a score of: " + score.innerText +
       "\n\nPlay again?");
     location.reload();
+    
   }
 }, 50);

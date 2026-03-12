@@ -5,7 +5,7 @@
   height: 300px;
   border: 2px solid black;
   margin: auto;
-  background-image: url("https://punkt4.info/fileadmin/_processed_/c/d/csm_Komax_5_1__615b5952f9.jpeg");
+  background-image: url("img/gbKomax.jpeg");
   background-size: cover;
 }
 
@@ -14,7 +14,7 @@
   width: 75px;
   top: 225px;
   position: relative;
-  background-image: url("ffile:///Users/jandorig/Downloads/Game/images/Jan/Jan_Game-Over.png");
+  background-image: url("img/Jan_Game-Over.png");
   background-size: cover;
 }
 
@@ -26,10 +26,10 @@
   left: 550px;
   background-image: url("file:///Users/jandorig/Downloads/Game/images/cactus_2.png");
   background-size: cover;
-  animation: rock 1.33s infinite;
+  animation: maschiene 1.33s infinite;
 }
 
-@keyframes rock {
+@keyframes maschiene {
   0%{left: 550px;}
   100%{left: -50px;}
 }
