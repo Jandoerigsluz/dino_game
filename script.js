@@ -16,22 +16,34 @@ document.addEventListener('keypress', (event) => {
 })
 
 setInterval(() => {
-  const janTop = parseInt(window.getComputedStyle(jan)
-    .getPropertyValue('top'));
-  const maschieneLeft = parseInt(window.getComputedStyle(maschiene)
-    .getPropertyValue('left'));
-  score.innerText++;
+
+  const janTop = parseInt(window.getComputedStyle(jan).getPropertyValue("top"));
+
+  const maschieneLeft = parseInt(
+    window.getComputedStyle(maschiene).getPropertyValue("left")
+  );
+
+  score.innerText = parseInt(score.innerText) + 1;
 
   if (maschieneLeft < 0) {
-    maschiene.style.display = 'none';
+    maschiene.style.display = "none";
   } else {
-    maschiene.style.display = ''
+    maschiene.style.display = "";
   }
 
   if (maschieneLeft < 50 && maschieneLeft > 0 && janTop > 150) {
-    alert("You got a score of: " + score.innerText +
-      "\n\nPlay again?");
-    location.reload();
-    
+
+    // Animation starten
+    jan.classList.add("crash");
+
+    // Maschine stoppen
+    maschiene.style.animation = "none";
+
+    setTimeout(() => {
+      alert("You got a score of: " + score.innerText + "\n\nPlay again?");
+      location.reload();
+    }, 500);
+
   }
+
 }, 50);
